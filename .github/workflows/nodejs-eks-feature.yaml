@@ -7,15 +7,19 @@ on:
         description: 'Project name'
         required: true
         type: string
+
       component:
         description: 'Component name'
         required: true
         type: string
+
 jobs:
-build-nodejs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: read version
-      run: |
-        echo "reading version"
-    
+  build-nodejs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: read version
+        run: |
+          echo "reading version"
+          echo "Project: ${{ inputs.project }}"
+          echo "Component: ${{ inputs.component }}"
